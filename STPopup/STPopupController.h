@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <STPopup/STPopupNavigationBar.h>
+#import <STPopup/STContainerView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +27,7 @@ typedef NS_ENUM(NSUInteger, STPopupControllerTransitioningAction) {
 /**
  Container view of popup controller.
  */
-@property (nonatomic, strong, readonly) UIView *containerView;
+@property (nonatomic, strong, readonly) STContainerView *containerView;
 
 @end
 
@@ -126,7 +127,7 @@ typedef NS_ENUM(NSUInteger, STPopupTransitionStyle) {
  Container view which is containing the navigation bar and content of top most view controller.
  By default its background color is set to white and clipsToBounds is set to YES.
  */
-@property (nonatomic, strong, readonly) UIView *containerView;
+@property (nonatomic, strong, readonly) STContainerView *containerView;
 
 /**
  *  The top view controller in the popup's controller stack.

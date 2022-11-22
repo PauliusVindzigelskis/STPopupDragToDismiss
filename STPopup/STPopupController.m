@@ -13,10 +13,11 @@
 #import "UIResponder+STPopup.h"
 #import "STPopupControllerTransitioningSlideVertical.h"
 #import "STPopupControllerTransitioningFade.h"
+#import "STContainerView.h"
 
 @implementation STPopupControllerTransitioningContext
 
-- (instancetype)initWithContainerView:(UIView *)containerView action:(STPopupControllerTransitioningAction)action
+- (instancetype)initWithContainerView:(STContainerView *)containerView action:(STPopupControllerTransitioningAction)action
 {
     if (self = [super init]) {
         _containerView = containerView;
@@ -618,7 +619,7 @@ static NSMutableSet *_retainedPopupControllers;
 
 - (void)setupContainerView
 {
-    _containerView = [UIView new];
+    _containerView = [STContainerView new];
     _containerView.backgroundColor = [UIColor whiteColor];
     _containerView.clipsToBounds = YES;
     [_containerViewController.view addSubview:_containerView];
@@ -938,6 +939,35 @@ static NSMutableSet *_retainedPopupControllers;
 }
 
 - (void)popupNavigationBar:(STPopupNavigationBar *)navigationBar touchDidEndWithOffset:(CGFloat)offset
+{
+    if (offset > 150) {
+        STPopupTransitionStyle transitionStyle = self.transitionStyle;
+        self.transitionStyle = STPopupTransitionStyleSlideVertical;
+        [self dismissWithCompletion:^{
+            self.transitionStyle = transitionStyle;
+        }];
+    }
+    else {
+        [_containerView endEditing:YES];
+        [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self->_containerView.transform = CGAffineTransformIdentity;
+        } completion:nil];
+    }
+}
+
+#pragma mark - STPopupContainerViewTouchEventDelegate
+
+
+- (void)popupContainerView:(UIView *)navigationBar touchDidMoveWithOffset:(CGFloat)offset{
+    [_containerView endEditing:YES];
+    
+    if (self.style == STPopupStyleBottomSheet && offset < -STPopupBottomSheetExtraHeight) {
+        return;
+    }
+    _containerView.transform = CGAffineTransformMakeTranslation(0, offset);
+}
+
+- (void)popupContainerView:(UIView *)navigationBar touchDidEndWithOffset:(CGFloat)offset
 {
     if (offset > 150) {
         STPopupTransitionStyle transitionStyle = self.transitionStyle;

@@ -12,5 +12,6 @@
 #import <STPopup/STPopupController.h>
 #import <STPopup/STPopupNavigationBar.h>
 #import <STPopup/UIViewController+STPopup.h>
+#import <STPopup/STContainerView.h>
 
 #endif

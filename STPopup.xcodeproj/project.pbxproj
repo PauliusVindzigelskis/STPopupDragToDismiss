@@ -23,6 +23,8 @@
 		76D822541C1DB62600FCF988 /* UIResponder+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D8224A1C1DB62600FCF988 /* UIResponder+STPopup.m */; };
 		76D822551C1DB62600FCF988 /* UIViewController+STPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 76D8224B1C1DB62600FCF988 /* UIViewController+STPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76D822561C1DB62600FCF988 /* UIViewController+STPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D8224C1C1DB62600FCF988 /* UIViewController+STPopup.m */; };
+		EAF79F8A292CFFB00027A6AB /* STContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAF79F88292CFFB00027A6AB /* STContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAF79F8B292CFFB00027A6AB /* STContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF79F89292CFFB00027A6AB /* STContainerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		76D8224A1C1DB62600FCF988 /* UIResponder+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+STPopup.m"; sourceTree = "<group>"; };
 		76D8224B1C1DB62600FCF988 /* UIViewController+STPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+STPopup.h"; sourceTree = "<group>"; };
 		76D8224C1C1DB62600FCF988 /* UIViewController+STPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+STPopup.m"; sourceTree = "<group>"; };
+		EAF79F88292CFFB00027A6AB /* STContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STContainerView.h; sourceTree = "<group>"; };
+		EAF79F89292CFFB00027A6AB /* STContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STContainerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		76D8223A1C1DB5E400FCF988 /* STPopup */ = {
 			isa = PBXGroup;
 			children = (
+				EAF79F88292CFFB00027A6AB /* STContainerView.h */,
+				EAF79F89292CFFB00027A6AB /* STContainerView.m */,
 				76D822431C1DB62600FCF988 /* STPopupController.h */,
 				76D822441C1DB62600FCF988 /* STPopupController.m */,
 				76D822451C1DB62600FCF988 /* STPopupLeftBarItem.h */,
@@ -104,6 +110,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF79F8A292CFFB00027A6AB /* STContainerView.h in Headers */,
 				76D822511C1DB62600FCF988 /* STPopupNavigationBar.h in Headers */,
 				0A14D9941D65971B00149145 /* STPopupControllerTransitioningSlideVertical.h in Headers */,
 				0A14D9981D65A03000149145 /* STPopupControllerTransitioningFade.h in Headers */,
@@ -187,6 +194,7 @@
 				0A14D9991D65A03000149145 /* STPopupControllerTransitioningFade.m in Sources */,
 				76593AFE2751288E00D1877D /* STPopup+SwiftUI.swift in Sources */,
 				76D822561C1DB62600FCF988 /* UIViewController+STPopup.m in Sources */,
+				EAF79F8B292CFFB00027A6AB /* STContainerView.m in Sources */,
 				76D822521C1DB62600FCF988 /* STPopupNavigationBar.m in Sources */,
 				0A14D9951D65971B00149145 /* STPopupControllerTransitioningSlideVertical.m in Sources */,
 				76D8224E1C1DB62600FCF988 /* STPopupController.m in Sources */,
