@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, STPopupControllerTransitioningAction) {
 /**
  Container view of popup controller.
  */
-@property (nonatomic, strong, readonly) STContainerView *containerView;
+@property (nonatomic, strong, readonly) UIView *containerView;
 
 @end
 

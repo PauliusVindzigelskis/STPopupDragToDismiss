@@ -17,7 +17,7 @@
 
 @implementation STPopupControllerTransitioningContext
 
-- (instancetype)initWithContainerView:(STContainerView *)containerView action:(STPopupControllerTransitioningAction)action
+- (instancetype)initWithContainerView:(UIView *)containerView action:(STPopupControllerTransitioningAction)action
 {
     if (self = [super init]) {
         _containerView = containerView;
@@ -101,7 +101,7 @@ static NSMutableSet *_retainedPopupControllers;
 
 @end
 
-@interface STPopupController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, STPopupNavigationTouchEventDelegate>
+@interface STPopupController () <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, STPopupNavigationTouchEventDelegate, STContainerViewTouchEventDelegate>
 
 @end
 
@@ -620,6 +620,7 @@ static NSMutableSet *_retainedPopupControllers;
 - (void)setupContainerView
 {
     _containerView = [STContainerView new];
+    _containerView.containerDelegate = self;
     _containerView.backgroundColor = [UIColor whiteColor];
     _containerView.clipsToBounds = YES;
     [_containerViewController.view addSubview:_containerView];

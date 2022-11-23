@@ -26,7 +26,7 @@
     }
     
     UITouch *touch = [touches anyObject];
-    if ((touch.view == self || touch.view.superview == self) && !_moving) {
+    if (!_moving) {
         _moving = YES;
         _movingStartY = [touch locationInView:self.window].y;
     }
