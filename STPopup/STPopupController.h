@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <STPopup/STPopupNavigationBar.h>
-#import <STPopup/STContainerView.h>
+#import "STPopupNavigationBar.h"
+#import "STContainerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
